@@ -1,64 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styel.css">
-  <link rel="stylesheet" href="css/normal.css">
-  <link rel="stylesheet" href="css/all.min.css">
-  <title>edit photos</title>
-</head>
-<body>
-<div class="container">
-  <div class="img">
-    <div class="imgbox">
-      <img id="img">
-     
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>photo-editing-app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="img">
+        <div class="img-box">
+          <img id="img" />
+          <canvas id="canvas"></canvas>
+        </div>
+        <div class="upload">
+          <label for="upload">upload</label>
+          <input type="file" id="upload" />
+        </div>
+      </div>
+      <div class="filters">
+        <ul>
+          <li>
+            <label for="saturate">Saturate</label>
+            <input type="range" id="saturate" min="0" max="200" value="100" />
+          </li>
+          <li>
+            <label for="contrast">Contrast</label>
+            <input type="range" id="contrast" min="0" max="200" value="100" />
+          </li>
+          <li>
+            <label for="brightness">Brightness</label>
+            <input type="range" id="brightness" min="0" max="200" value="100" />
+          </li>
+          <li>
+            <label for="sepia">Sepia</label>
+            <input type="range" id="sepia" min="0" max="200" value="0" />
+          </li>
+          <li>
+            <label for="grayscale">Grayscale</label>
+            <input
+              type="range"
+              id="grayscale"
+              step="0.1"
+              min="0"
+              max="1"
+              value="0"
+            />
+          </li>
+          <li>
+            <label for="blur">Blur</label>
+            <input
+              type="range"
+              id="blur"
+              step="0.1"
+              min="0"
+              max="10"
+              value="0"
+            />
+          </li>
+          <li>
+            <label for="hue-rotate">Hue Rotate</label>
+            <input type="range" id="hue-rotate" min="0" max="350" value="0" />
+          </li>
+          <li>
+            <a download="true" id="download">Download</a>
+            <span onclick="resetvalue()">Reset</span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="upload">
-      <label for="upload">upload </label>
-      <input type="file"  id="upload">
-    </div>
-  </div>
-  <div class="filters">
-    <ul>
-      <li>
-        <label for="saturate">saturate</label>
-        <input type="range" min="0" max="200"  value="100" id="saturate">
-      </li>
-      <li>
-        <label for="contrast">contrast</label>
-        <input type="range" min="0" max="200"  value="100" id="contrast">
-      </li>
-      <!-- <li>
-        <label for="brihtness">brihtness</label>
-        <input type="range" min="0" max="200"  value="100" id="brihtness">
-      </li> -->
-      <li>
-        <label for="sepia">sepia</label>
-        <input type="range" min="0" max="200"  value="0" id="sepia">
-      </li>
-      <li>
-        <label for="grayscale">grayscale</label>
-        <input type="range" min="0" max="1" step="0.1"  value="0" id="grayscale">
-      </li>
-      <!-- <li>
-         <label for="blur">blur</label> 
-        <input type="range" min="0" max="10" step="0.1"  value="0" id="blur">
-      </li>  -->
-      <!-- <li>
-        <label for="hue-rotate">hue rotate</label>
-        <input type="range" min="0" max="350"   value="0" id="hue-rotate">
-      </li> -->
-      <li>
-        <a download="true" id="download">download</a>
-        <span onclick="reset()">Reset</span>
-      </li>
-    </ul>
-  </div>
-</div>
-<script src="test.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
